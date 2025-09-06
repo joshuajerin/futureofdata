@@ -81,17 +81,6 @@ A multi-app workspace combining analytics dashboards, data APIs, and an AI assis
 
 ## Architecture & Flow
 
-```mermaid
-  A["Volunteer Data\n- CSV from VolunteerMatters\n- XLSX exports"] --> B["Service 2: FastAPI\nHours & Milestones"]
-  A --> C["Dashboard /1\nReact + Tailwind\nRecharts"]
-  B --> C
-  B --> D["Milestone Summaries\n+ Storyworlds"]
-  A --> E["Service 3: FastAPI\nPathFinder AI + ML"]
-  E --> F["AI Chat & Matching"]
-  E --> G["Supabase (optional)\nPreferences • Matches • Analytics"]
-  C <--> F
-```
-
 - `1/` dashboard ingests CSV/XLSX locally in-browser for instant analytics
 - `2/` API provides normalized aggregates, achievements, and detail lookups
 - `3/` AI assistant provides chat, matching, and analytics; integrates optional persistence
